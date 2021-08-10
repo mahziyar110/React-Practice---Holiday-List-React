@@ -41,12 +41,9 @@ class App extends Component {
     return (
       <div id="main">
         {/* Do not remove the main div */}
-        let i = 1;
         <ol>
-          for(const city of cityList) {
-            {
-              city.country === "India" && <li key={"location" + i++}>city.name</li>
-            }
+          {
+            this.cityList.filter((el) => el.country === "India").map((city, i) => (<li key={"location"+i}>{city.name}</li>))
           }
         </ol>
       </div>
